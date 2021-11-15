@@ -1,33 +1,21 @@
 import './App.css';
-import Settings from './Settings';
-import Timer from './Timer';
-import {useState} from 'react'
-import SettingsContext from './SettingsContext';
+
+import { useHistory } from 'react-router-dom';
 
 
 function App() {
 
-   const [showSettings, setShowSettings] = useState();
-   const [workMinutes, setWorkMinutes]= useState(45)
+
 
   return (
     <main>
-      <SettingsContext.Provider value={{
-        showSettings,
-        setShowSettings,
-        workMinutes,
-        setWorkMinutes,
-    
-
-      }}> 
-        {
-          showSettings ? <Settings/> : <Timer/>
-        }
-      </SettingsContext.Provider>
-      
-
+            <h1>Welcome to React Router!</h1>
+           <button type="button" onClick={(e) => {e.push('/Timer/ShowTimer.js')}}>
+             ShowTimer
+           </button>
     </main>
   );
+
 }
 
 export default App;
